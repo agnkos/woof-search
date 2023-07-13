@@ -1,27 +1,30 @@
-import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import DogListItem from "../components/DogListItem";
+import { Context } from "../Context";
 
 const Home = () => {
 
-    const [dogs, setDogs] = useState([])
+    const {dogs} = useContext(Context)
 
-    useEffect(() => {
-        fetch("https://dog.ceo/api/breeds/list/all")
-            .then(res => res.json())
-            .then(data => {
-                console.log(data.message)
-                setDogs(Object.keys(data.message))            
-            })
-    }, [])
+    // const [dogs, setDogs] = useState([])
 
-useEffect(() => {
-    console.log(dogs)
-}, [dogs])
+    // useEffect(() => {
+    //     fetch("https://dog.ceo/api/breeds/list/all")
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data.message)
+    //             setDogs(Object.keys(data.message))
+    //         })
+    // }, [])
+
+    // useEffect(() => {
+    //     console.log(dogs)
+    // }, [dogs])
 
     return (
         <div className="max-h-full overflow-y-auto p-6">
-            <h1 className="text-2xl font-semibold">Lista ras</h1>
-            {dogs.length > 0 && dogs.map(item => <p>{item}</p>)}
+            <h1 className="mb-4 text-2xl font-semibold">Lista ras</h1>
+            {dogs.length > 0 && dogs.map(item => <DogListItem key={item} item={item} />)}
         </div>
     )
 }
