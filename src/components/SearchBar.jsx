@@ -19,7 +19,7 @@ const SearchBar = () => {
         if (dogInList.length > 0) {
             navigate(`/search/${dogInList[0].name}`, { state: dogInList[0].query });
         } else if (dogInBase.length > 0) {
-            navigate(`/search/${query}`)
+            navigate(`/search/${query.toLowerCase()}`)
         } else {
             navigate('/search/notfound', { state: "notfound" });
         }
