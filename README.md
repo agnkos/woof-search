@@ -11,5 +11,5 @@
 
 #### Project screenshots:
 
-<img src='./assets/Screenshot_1.jpg' alt="app screenshot" title="app screenshot" style='width: 250px; margin: 10px;'> 
-<img src='./assets/Screenshot_2.jpg' alt="app screenshot" title="app screenshot" style='width: 250px; margin: 10px;'> 
+<img src='./src/assets/Screenshot_1.jpg' alt="app screenshot" title="app screenshot" style='width: 250px; margin: 10px;'> 
+<img src='./src/assets/Screenshot_2.jpg' alt="app screenshot" title="app screenshot" style='width: 250px; margin: 10px;'> 
