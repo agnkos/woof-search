@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import NotFound from "./NotFound";
 
 const DogPage = () => {
@@ -7,9 +7,12 @@ const DogPage = () => {
     const [error, setError] = useState(false);
 
     const params = useParams();
+    const location = useLocation();
+
+    const query = params.query || location.state.query;
 
     useEffect(() => {
-        fetch(`https://dog.ceo/api/breed/${params.query}/images/random`)
+        fetch(`https://dog.ceo/api/breed/${query}/images/random`)
             .then(res => res.json())
             .then(data => {
                 setDogImg("")
