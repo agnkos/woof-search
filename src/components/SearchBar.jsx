@@ -14,7 +14,7 @@ const SearchBar = () => {
     const goToResults = () => {
         const dogInBase = dogs.some(element => element === query.toLowerCase());
         if (dogInBase) {
-            navigate(`/search/${query}`);
+            navigate(`/search/${query.toLowerCase()}`);
         } else {
             navigate('/search/notfound', {state: "notfound"});
             // setNotFound(true)
