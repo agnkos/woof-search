@@ -1,19 +1,24 @@
 import { useContext, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../Context";
+// import NotFound from "../pages/NotFound";
 
 const SearchBar = () => {
 
     const [query, setQuery] = useState();
+    // const [notFound, setNotFound] = useState(false);
+    const { dogs } = useContext(Context);
     const navigate = useNavigate();
     const inputRef = useRef();
-    const { dogs } = useContext(Context);
 
     const goToResults = () => {
         const dogInBase = dogs.some(element => element === query.toLowerCase());
         if (dogInBase) {
             navigate(`/search/${query}`);
-        } else navigate('/notfound');
+        } else {
+            navigate('/search/notfound', {state: "notfound"});
+            // setNotFound(true)
+        }
         inputRef.current.value = "";
         setQuery("")
     }
@@ -23,8 +28,8 @@ const SearchBar = () => {
     }
 
     return (
-        <>
-            <h1 className="text-xl text-center font-semibold">Znajdź swojego ulubionego pupila!</h1>
+        <>      
+          <h1 className="text-xl text-center font-semibold">Znajdź swojego ulubionego pupila!</h1>
             <div className="my-4 flex gap-4 max-[350px]:flex-col">
                 <input
                     type="text"

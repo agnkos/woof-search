@@ -13,27 +13,21 @@ const DogPage = () => {
             .then(res => res.json())
             .then(data => {
                 setDogImg("")
-                console.log(data);
-                console.log(data.message);
                 if (data.status === "success") {
                     setDogImg(data.message);
                 } else setError(true)
             })
     }, [params])
 
-    useEffect(() => {
-        console.log('dogimg', dogImg)
-    }, [dogImg])
-
     const nameCapitalized = params.query[0].toUpperCase() + params.query.slice(1)
 
     return (
         <>
             {error ? <NotFound /> : (
-                <div className="p-8 flex flex-col gap-4 max-w-xl">
+                <div className="p-8 flex flex-col gap-4 max-w-xl max-[350px]:p-4">
                     <img
                         src={dogImg}
-                        className="mx-auto max-w-full w-60 h-60 object-cover rounded-full"
+                        className="mx-auto max-w-full w-60 h-60 object-cover rounded-full max-[350px]:w-52 max-[350px]:h-52"
                     />
                     <h2 className="text-2xl font-semibold">{nameCapitalized}</h2>
                     <p className="">

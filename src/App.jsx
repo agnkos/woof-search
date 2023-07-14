@@ -11,9 +11,10 @@ const router = createBrowserRouter(createRoutesFromElements(
   <Route element={<Layout />} errorElement={<ErrorPage />}>
     <Route path="/" element={<Home />} />
     <Route element={<SearchLayout />} >
-      <Route path="search" element={<Search />} />
+      <Route path="search" element={<Search />} >
+        <Route path="notfound" element={<NotFound />} />
+      </Route>
       <Route path="search/:query" element={<DogPage />} />
-      <Route path="notfound" element={<NotFound />} />
     </Route>
     <Route path="*" element={<ErrorPage />} />
   </Route>

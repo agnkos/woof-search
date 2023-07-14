@@ -9,7 +9,6 @@ const ContextProvider = ({ children }) => {
         fetch("https://dog.ceo/api/breeds/list/all")
             .then(res => res.json())
             .then(data => {
-                console.log(data.message)
                 setDogs(Object.keys(data.message))
             })
     }, [])
