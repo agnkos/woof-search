@@ -3,7 +3,7 @@ import Navigation from "../components/Navigation";
 
 const Layout = () => {
     return (
-        <div className="h-screen max-h-full flex flex-col justify-between">
+        <div className="h-screen max-h-screen flex flex-col justify-between">
             <Outlet />
             <Navigation />
         </div>
