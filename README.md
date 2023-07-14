@@ -3,7 +3,7 @@
 ## [Link to the deployed app](https://woof-search.netlify.app/) 
 
 #### Project description:
-- search and read about your favorite dogs
+- search and read about your favourite dogs
 - built using Dog API [link](https://dog.ceo/dog-api/)
 - built with: 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
