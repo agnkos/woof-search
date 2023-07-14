@@ -6,7 +6,6 @@ const DogListItem = ({ item }) => {
 
     return (
         <div className="my-2 text-lg tracking-wide">
-            {/* <NavLink to={{ pathname: `search/${item.name}`, state: { query: `${item.query}` } }}> */}
             <NavLink to={`search/${item.name}`} state={{query: item.query}}>
                 {nameCapitalized}
             </NavLink>

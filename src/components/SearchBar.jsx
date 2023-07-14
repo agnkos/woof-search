@@ -9,6 +9,8 @@ const SearchBar = () => {
     const navigate = useNavigate();
     const inputRef = useRef();
 
+    // dog in base - sprawdzić czy query istnieje w dogs! (lista kluczy) - sprawdzić czy chodzi o samą rasę
+
     const goToResults = () => {
         console.log(query)
         const dogInList = alldogs.filter(element => element.name === query.toLowerCase());

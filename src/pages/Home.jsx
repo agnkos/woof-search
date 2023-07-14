@@ -4,7 +4,7 @@ import { Context } from "../Context";
 
 const Home = () => {
 
-    const {dogs, alldogs} = useContext(Context)
+    const {alldogs} = useContext(Context)
 
     return (
         <div className="max-h-full overflow-y-auto p-6">
