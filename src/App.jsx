@@ -1,19 +1,21 @@
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
-import Layout from "./pages/Layout";
-import DogPage from "./components/DogPage";
-import SearchLayout from "./pages/SearchLayout";
+import Layout from "./layouts/Layout";
+import DogPage from "./pages/DogPage";
+import SearchLayout from "./layouts/SearchLayout";
 import NotFound from "./pages/NotFound";
+import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter(createRoutesFromElements(
-  <Route element={<Layout />}>
+  <Route element={<Layout />} errorElement={<ErrorPage />}>
     <Route path="/" element={<Home />} />
     <Route element={<SearchLayout />} >
       <Route path="search" element={<Search />} />
       <Route path="search/:query" element={<DogPage />} />
       <Route path="notfound" element={<NotFound />} />
     </Route>
+    <Route path="*" element={<ErrorPage />} />
   </Route>
 ))
 
