@@ -29,7 +29,7 @@ const DogPage = () => {
     return (
         <>
             {error ? <NotFound /> : (
-                <div className="p-8 flex flex-col gap-4 max-w-xl max-[350px]:p-4">
+                <div className="p-4 flex flex-col gap-4 max-w-xl">
                     <img
                         src={dogImg}
                         className="mx-auto max-w-full w-60 h-60 object-cover rounded-full max-[350px]:w-52 max-[350px]:h-52 min-[500px]:w-80 min-[500px]:h-80"

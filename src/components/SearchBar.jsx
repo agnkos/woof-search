@@ -34,7 +34,7 @@ const SearchBar = () => {
     return (
         <>
             <h1 className="text-xl text-center font-semibold">Znajdź swojego ulubionego pupila!</h1>
-            <div className="my-4 flex gap-4 max-[350px]:flex-col">
+            <div className="my-4 flex gap-4 max-[360px]:flex-col">
                 <input
                     type="text"
                     className="p-2 text-zinc-500 border border-zinc-500 rounded-lg"
