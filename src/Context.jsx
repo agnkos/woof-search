@@ -39,7 +39,7 @@ const ContextProvider = ({ children }) => {
     }
 
     return (
-        <Context.Provider value={{ dogs, alldogs }}>
+        <Context.Provider value={{ alldogs }}>
             {children}
         </Context.Provider>
     )
