@@ -9,10 +9,11 @@ const SearchBar = () => {
     const navigate = useNavigate();
     const inputRef = useRef();
 
-    // dog in base - sprawdzić czy query istnieje w dogs! (lista kluczy) - sprawdzić czy chodzi o samą rasę
+// goToResults - funkcja przekierowująca do wyników wyszukiwania po kliknięciu "Szukaj"
+// funkcja na tym etapie sprawdza czy wyszukiwana rasa znajduje się na liście (dogInList, np "french bulldog") lub w bazie API (dogInBase - ponieważ można wysłać zapytanie do API o samą główną rasę, np "bulldog")
+// przekierowuje na podstronę, w przypadku listy uwzględniającej podrasy (dogInList) w state przekazywane jest query
 
     const goToResults = () => {
-        console.log(query)
         const dogInList = alldogs.filter(element => element.name === query.toLowerCase());
         const dogInBase = alldogs.filter(element => element.name.split(" ")[1] === query.toLowerCase());
 

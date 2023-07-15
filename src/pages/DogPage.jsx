@@ -8,8 +8,11 @@ const DogPage = () => {
 
     const params = useParams();
     const location = useLocation();
-    console.log(location)
-    console.log(params)
+
+    // do wyników wyszukiwania można dostać się trzema drogami:
+    // 1. ze strony home (lista ras) - przez link, każdy element na liście jest NavLinkiem przekazującym w state query (tu odczytywany z location.state.query)
+    // 2. z wyszukiwarki poprzez wpisanie rasy, która znajduje się na liście ("french bulldog", "akita") - tu query odczytywane jest z location.state, przekazanym w navigate
+    // 3. z wyszukiwarki po wyszukaniu rasy "głównej", bez podrasy (np "bulldog") nawet jeśli istnieje podrasa - tych nie ma na liście na stronie home, ale można wysłać zapytanie do API, wtedy query brane jest z params.query 
 
     const query = location.state === null ? params.query : location.state.query || location.state
 
@@ -25,6 +28,8 @@ const DogPage = () => {
     }, [params])
 
     const nameCapitalized = params.query[0].toUpperCase() + params.query.slice(1)
+
+// sprawdzanie czy wyszukiwana rasa znajduje się na liście dostępnych ras odbywa się w komponencie SearchBar, przed przekierowaniem tu  - ale gdyby użytkownik wpisał ręcznie w adresie przeglądarki rasę do wyszukiwania - przy braku zdjęcia w bazie setError(true) i wyświetla się komponent NotFound
 
     return (
         <>

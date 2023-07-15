@@ -3,18 +3,17 @@ import { createContext, useState, useEffect } from "react";
 const Context = createContext();
 
 const ContextProvider = ({ children }) => {
-    const [dogs, setDogs] = useState([]);
     const [alldogs, setAlldogs] = useState([]);
 
     useEffect(() => {
         fetch("https://dog.ceo/api/breeds/list/all")
             .then(res => res.json())
             .then(data => {
-                console.log(data.message)
-                setDogs(Object.keys(data.message))
                 setAlldogs(listAllDogs(Object.entries(data.message)))
             })
     }, [])
+
+    // listAllDogs - funkcja tworząca tablicę obiektów z nazwami ras psów, uwzględniając podrasy (tak jak wygląda breeds list na stronie API) na podstawie zapytania do API, w każdym obiekcie znajduje się właściwość name (dla podras funkcja tworzy nazwę np z "bulldog": ["boston", "english", "french"] tworzy "french bulldog", "english bulldog", "boston bulldog". drugą właściwością jest query - potrzebne przy późniejszym zapytaniu do API (ponieważ jest inne dla rasy (np hound) a inne dla podrasy (np hound/afghan)). funkcja sortuje wyniki alfabetycznie wg nazwy rasy
 
     function listAllDogs(array) {
         return [...array].map(item => {
@@ -38,12 +37,6 @@ const ContextProvider = ({ children }) => {
             return 0;
         });
     }
-
-
-    useEffect(() => {
-        console.log(alldogs)
-        // console.log(dogListAll)
-    }, [alldogs])
 
     return (
         <Context.Provider value={{ dogs, alldogs }}>

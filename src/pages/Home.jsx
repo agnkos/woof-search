@@ -4,7 +4,9 @@ import { Context } from "../Context";
 
 const Home = () => {
 
-    const {alldogs} = useContext(Context)
+    const { alldogs } = useContext(Context);
+
+    // tu wyświetla się lista ras (jeśli rasa ma podrasę na liście znajduje się w połączeniu z każdą podrasą)
 
     return (
         <div className="max-h-full overflow-y-auto p-6">
