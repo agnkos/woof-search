@@ -30,7 +30,7 @@ const DogPage = () => {
     const nameCapitalized = params.query[0].toUpperCase() + params.query.slice(1)
 
     // sprawdzanie czy wyszukiwana rasa znajduje się na liście dostępnych ras odbywa się w komponencie SearchBar, przed przekierowaniem tu  
-    // - ale gdyby użytkownik wpisał ręcznie w pasku przeglądarki rasę do wyszukiwania - przy braku zdjęcia w bazie setError(true) i wyświetla się komponent NotFound
+    // - ale gdyby użytkownik wpisał ręcznie w pasku adresu przeglądarki rasę do wyszukiwania - przy braku zdjęcia w bazie setError(true) i wyświetla się komponent NotFound
 
     return (
         <>
