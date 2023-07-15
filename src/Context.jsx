@@ -13,7 +13,10 @@ const ContextProvider = ({ children }) => {
             })
     }, [])
 
-    // listAllDogs - funkcja tworząca tablicę obiektów z nazwami ras psów, uwzględniając podrasy (tak jak wygląda breeds list na stronie API) na podstawie zapytania do API, w każdym obiekcie znajduje się właściwość name (dla podras funkcja tworzy nazwę np z "bulldog": ["boston", "english", "french"] tworzy "french bulldog", "english bulldog", "boston bulldog". drugą właściwością jest query - potrzebne przy późniejszym zapytaniu do API (ponieważ jest inne dla rasy (np hound) a inne dla podrasy (np hound/afghan)). funkcja sortuje wyniki alfabetycznie wg nazwy rasy
+    // listAllDogs - funkcja tworząca tablicę obiektów z nazwami ras psów, uwzględniając podrasy (tak jak wygląda breeds list na stronie API) na podstawie zapytania do API,  
+    // w każdym obiekcie znajduje się właściwość name (dla podras funkcja tworzy nazwę np z "bulldog": ["boston", "english", "french"] tworzy "french bulldog", "english bulldog", "boston bulldog".
+    //  drugą właściwością jest query - potrzebne przy późniejszym zapytaniu do API (ponieważ jest inne dla rasy (np hound) a inne dla podrasy (np hound/afghan). 
+    // funkcja sortuje wyniki alfabetycznie wg nazwy rasy
 
     function listAllDogs(array) {
         return [...array].map(item => {

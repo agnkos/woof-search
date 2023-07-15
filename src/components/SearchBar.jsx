@@ -10,7 +10,8 @@ const SearchBar = () => {
     const inputRef = useRef();
 
 // goToResults - funkcja przekierowująca do wyników wyszukiwania po kliknięciu "Szukaj"
-// funkcja na tym etapie sprawdza czy wyszukiwana rasa znajduje się na liście (dogInList, np "french bulldog") lub w bazie API (dogInBase - ponieważ można wysłać zapytanie do API o samą główną rasę, np "bulldog")
+// funkcja na tym etapie sprawdza czy wyszukiwana rasa znajduje się na liście (dogInList, np "french bulldog") 
+// lub w bazie API (dogInBase - ponieważ można wysłać zapytanie do API o samą główną rasę, np "bulldog")
 // przekierowuje na podstronę, w przypadku listy uwzględniającej podrasy (dogInList) w state przekazywane jest query
 
     const goToResults = () => {
